@@ -1,0 +1,119 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-03-30T07:14:04.462Z",
+    "end": "2021-03-30T07:14:39.839Z",
+    "duration": 35377,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f537725c-710c-4945-9902-b52198288b98",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\demo.spec.js",
+      "file": "cypress\\integration\\examples\\demo.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "64172857-f330-4d74-91a6-91d5fbae1af0",
+          "title": "MyTestSuite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify Signup",
+              "fullTitle": "MyTestSuite Verify Signup",
+              "timedOut": null,
+              "duration": 20466,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"signup.json\").then(function (data) {\n  locatorObject.accountButton.click();\n  cy.contains(\"Register\").click();\n  locatorObject.enterFirstname.type(data.fname);\n  locatorObject.enterLastname.type(data.lname);\n  locatorObject.enterEmail.type(email);\n  locatorObject.enterPhone.type(data.phone);\n  locatorObject.enterPassword.type(data.password);\n  locatorObject.confirmPassowrd.type(data.password);\n  locatorObject.agree.check();\n  locatorObject.ContinueButton.click();\n  cy.title().should('eq', 'Your Account Has Been Created!');\n  locatorObject.navbar.contains('Tablets').click(); //how to call 2 functions?\n  cy.get('.nav').contains('Tablets').click();\n  locatorObject.content.should(\"contain\", \"Tablets\");\n  locatorObject.content.should(\"be.visible\");\n  cy.title().should('eq', 'Tablets'); //logout\n  locatorObject.accountButton.click();\n  locatorObject.logoutButton.click();\n});",
+              "err": {},
+              "uuid": "cff354b5-fec1-45c2-8d81-71241055c46c",
+              "parentUUID": "64172857-f330-4d74-91a6-91d5fbae1af0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify Login",
+              "fullTitle": "MyTestSuite Verify Login",
+              "timedOut": null,
+              "duration": 9462,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"login.json\").then(function (data) {\n  locatorObject.accountButton.click();\n  cy.contains(\"Login\").click();\n  locatorObject.enterEmail.type(email);\n  locatorObject.enterPassword.type(data.password);\n  locatorObject.loginButton.click();\n  locatorObject.content.should(\"contain\", \"My Account\");\n  locatorObject.content.should(\"be.visible\");\n  cy.title().should('eq', 'My Account');\n  locatorObject.navbar.contains('Software').click();\n  locatorObject.content.should(\"contain\", \"Software\");\n  locatorObject.content.should(\"be.visible\");\n  cy.title().should('eq', 'Software');\n});",
+              "err": {},
+              "uuid": "7e301d93-07fc-4f00-af02-1b08f6430a17",
+              "parentUUID": "64172857-f330-4d74-91a6-91d5fbae1af0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "cff354b5-fec1-45c2-8d81-71241055c46c",
+            "7e301d93-07fc-4f00-af02-1b08f6430a17"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 29928,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": null,
+      "version": "5.2.0"
+    }
+  }
+}
